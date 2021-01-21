@@ -117,14 +117,14 @@ bool VerilatorTbUtils::loadBin(char *fileName) {
 static struct argp_option options[] = {
   { 0, 0, 0, 0, "Simulation control:", 1 },
   { "timeout", OPT_TIMEOUT, "VAL", 0, "Stop the sim at VAL" },
-  { "elf-load", OPT_ELFLOAD, "FILE", 0, "Load program from ELF FILE" },
-  { "bin-load", OPT_BINLOAD, "FILE", 0, "Load program from binary FILE" },
+  { "elf_load", OPT_ELFLOAD, "FILE", 0, "Load program from ELF FILE" },
+  { "bin_load", OPT_BINLOAD, "FILE", 0, "Load program from binary FILE" },
   { 0, 0, 0, 0, "VCD generation:", 2 },
   { "vcd", 'v', "FILE", OPTION_ARG_OPTIONAL, "Enable and save VCD to FILE" },
   { "vcdstart", 's', "VAL", 0, "Delay VCD generation until VAL" },
   { "vcdstop", 't', "VAL", 0, "Terminate VCD generation at VAL" },
   { 0, 0, 0, 0, "Remote debugging:", 3 },
-  { "jtag-server", 'j', "PORT", OPTION_ARG_OPTIONAL, "Enable openocd JTAG server, opt. specify PORT" },
+  { "jtag_server", 'j', "PORT", OPTION_ARG_OPTIONAL, "Enable openocd JTAG server, opt. specify PORT" },
   { 0 },
 };
 
