@@ -1,6 +1,6 @@
 CAPI=2:
 
-name: ::verilator_tb_utils:1.0
+name: ::verilator_tb_utils:1.1
 description: "Verilator test bench utility class"
 
 filesets:

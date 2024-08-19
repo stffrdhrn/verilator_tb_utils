@@ -11,7 +11,7 @@
 
 VerilatorTbUtils::VerilatorTbUtils(uint32_t *mem)
   : mem(mem), t(0), timeout(0), vcdDump(false), vcdDumpStart(0), vcdDumpStop(0),
-    vcdFileName((char *)VCD_DEFAULT_NAME), jtagEnable(false),
+    vcdFileName((char *)VCD_DEFAULT_NAME), jtagEnable(false), lastClk(0),
     jtagPort(5555) {
   tfp = new VerilatedVcdC;
   jtag = new VerilatorJtagServer(10); /* Jtag clock is 10 period */
@@ -61,6 +61,12 @@ bool VerilatorTbUtils::doCycle() {
 
   t++;
   return true;
+}
+
+bool VerilatorTbUtils::clkPosEdge(uint8_t clk) {
+  bool isEdge = lastClk == 0 && clk == 1;
+  lastClk = clk;
+  return isEdge;
 }
 
 bool VerilatorTbUtils::loadElf(char *fileName) {
