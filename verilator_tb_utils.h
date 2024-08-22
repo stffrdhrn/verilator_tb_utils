@@ -34,6 +34,7 @@ public:
 
   static int parseOpts(int key, char *arg, struct argp_state *state);
 
+  bool clkPosEdge(uint8_t clk);
 private:
   uint64_t t;
 
@@ -52,6 +53,8 @@ private:
 
   bool loadElf(char *fileName);
   bool loadBin(char *fileName);
+
+  uint8_t lastClk;
 };
 
 #endif
